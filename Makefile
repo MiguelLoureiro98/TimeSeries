@@ -1,4 +1,4 @@
-GCC = gcc
+GPP = g++
 CPPFLAGS = -Wall -g
 LIB_NAME = TimeSeries
 SRC_DIR = src
@@ -11,8 +11,8 @@ INC = $(SRC_DIR)/$(LIB_NAME).h
 .PHONY:
 all: test
 
-$(TEST_EXEC): $(TEST_SOURCES) $(INC)
-	$(GCC) $(CPPFLAGS) $^ -I $(SRC_DIR)/ -lCppUTest -o $@
+$(TEST_EXEC): $(TEST_SOURCES)
+	$(GPP) $(CPPFLAGS) $^ -I $(SRC_DIR)/ -lCppUTest -o $@
 
 .PHONY:
 test: $(TEST_EXEC)
