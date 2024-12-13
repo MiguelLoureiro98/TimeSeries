@@ -13,13 +13,14 @@ TimeSeries currently supports the following models:
 | AR | AR | An autoregressive model. | Under development. |
 | MA | MA | A moving average model. | Under development. |
 
+Multi-step forecasting is supported.
+
 ## Installation
 
-TimeSeries will soon be submitted to the official Arduino library index. Once it is accepted, it will be available for download using the Arduino IDE.
+TimeSeries will soon be submitted to the official Arduino library index. Once it is accepted, it will be available for download using the Arduino IDE. Alternatively, once the first release is published, the library will be available for [download directly from Github](https://www.youtube.com/watch?v=WuqEAUirXw0).
 
 ## Dependencies
 
-- [CircularQueue](https://github.com/Francis-Magallanes/CircularQueue/)
 - [Gaussian](https://github.com/ivanseidel/Gaussian)
 
 ## Documentation
