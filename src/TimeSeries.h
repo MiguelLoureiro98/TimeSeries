@@ -1,6 +1,6 @@
 /****************************************************************************   
     
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2024 Miguel Loureiro
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -18,13 +18,22 @@
 
 /*****************************************************************************
 *
-* @file This file contains several class declarations grouped under the 
-*   ts namespace.
+* @file TimeSeries.h
+*
+* @author Miguel Loureiro
+*
+* @brief This file contains all the class definitions for the TimeSeries
+*   library.
+*
+* @copyright Copyright (c) 2024 Miguel Loureiro
 *
 ******************************************************************************/
 
 #ifndef __TIME_SERIES_H__
 #define __TIME_SERIES_H__
+
+#include "Queue.h"
+#include "Gaussian.h"
 
 /*******************************************************************************
 *
