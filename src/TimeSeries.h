@@ -32,7 +32,6 @@
 #ifndef __TIME_SERIES_H__
 #define __TIME_SERIES_H__
 
-#include "Queue.h"
 #include "Gaussian.h"
 
 /*******************************************************************************
