@@ -178,7 +178,7 @@ namespace ts{
 
         private:
 
-            double _weights[p] = {0};
+            double* _weights = nullptr;
             double _constant = 0.0;
             double _data_buffer[p] = {0};
             size_t _wrinting_index = 0;
