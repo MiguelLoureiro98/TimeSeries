@@ -314,7 +314,7 @@ namespace ts{
                 _length_index = q;
                 Gaussian dist(0, _sigma2);
 
-                for(size_t i=0; i<p; i++){
+                for(size_t i=0; i<q; i++){
 
                     _data_buffer[i] = dist.random();
 
