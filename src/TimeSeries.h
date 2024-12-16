@@ -32,7 +32,8 @@
 #ifndef __TIME_SERIES_H__
 #define __TIME_SERIES_H__
 
-#include "Gaussian.h"
+#include <stdint.h>
+//#include "Gaussian.h"
 
 /*******************************************************************************
 *
@@ -79,7 +80,7 @@ namespace ts{
             * @param[in] constant The model's intercept value.
             * 
             ********************************************************************************/
-            AR(double& weights[p], double constant=0.0) : _weights(weights), _constant(constant){};
+            AR(double (&weights)[p], double constant=0.0) : _weights(weights), _constant(constant){};
 
             /*******************************************************************************
             * 
@@ -106,7 +107,7 @@ namespace ts{
             * @param[in] weights Array of new weights.
             * 
             ********************************************************************************/
-            void set_weights(double& weights[p]){ 
+            void set_weights(double (&weights)[p]){ 
                 
                 _weights = weights;
                 
@@ -127,10 +128,46 @@ namespace ts{
                 return;
             };
 
+            void forecast(double (&data)[p], double* predictions, int horizon=1){
+
+                // Initialise indices and buffer.
+
+                _wrinting_index = 0;
+                _length_index = p;
+
+                for(size_t i=0; i<p; i++){
+
+                    _data_buffer[i] = data[i];
+
+                }
+
+                // Compute forecasts. Most recent data point last.
+
+                for(size_t i=0; i<horizon; i++){
+
+                    for(size_t j=_wrinting_index; j<_length_index, j++){
+
+                        predictions[i] += _weights[j % p] * _data_buffer[j % p];
+
+                    }
+
+                    _data_buffer[i % p] = predictions[i]; // What's the right buffer index?
+                    _wrinting_index++;
+                    _length_index++;
+
+                }
+
+                return;
+
+            };
+
         private:
 
             double _weights[p] = {0};
             double _constant = 0.0;
+            double _data_buffer[p] = {0};
+            size_t _wrinting_index = 0;
+            size_t _length_index = 0;
 
     };
 
@@ -167,7 +204,7 @@ namespace ts{
             * @param[in] constant The model's intercept value.
             * 
             ********************************************************************************/
-            MA(double& weights[q], double constant=0.0) : _weights(weights), _constant(constant){};
+            MA(double (&weights[q]), double constant=0.0) : _weights(weights), _constant(constant){};
 
             /*******************************************************************************
             * 
@@ -194,7 +231,7 @@ namespace ts{
             * @param[in] weights Array of new weights.
             * 
             ********************************************************************************/
-            void set_weights(double& weights[q]){ 
+            void set_weights(double (&weights)[q]){ 
                 
                 _weights = weights;
                 
