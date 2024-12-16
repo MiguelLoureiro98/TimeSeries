@@ -33,7 +33,7 @@
 #define __TIME_SERIES_H__
 
 #include <stdint.h>
-//#include "Gaussian.h"
+#include "Gaussian.h"
 
 /*******************************************************************************
 *
@@ -89,7 +89,7 @@ namespace ts{
             * @return Array of model weights.
             * 
             ********************************************************************************/
-            double& get_weights() const { return _weights; };
+            double* get_weights() const { return _weights; };
 
             /*******************************************************************************
             * 
@@ -98,7 +98,7 @@ namespace ts{
             * @return Model intercept.
             * 
             ********************************************************************************/
-            double& get_constant() const { return _constant; };
+            double get_constant() const { return _constant; };
             
             /*******************************************************************************
             * 
@@ -140,7 +140,7 @@ namespace ts{
             *   must come last, and the oldest one first.
             * @param[out] predictions Model forecasts. The prediction that goes further into
             *   the future comes last.
-            * @param[in] horizon Prediction horizon.
+            * @param[in] horizon Forecast horizon.
             * 
             ********************************************************************************/
             void forecast(double (&data)[p], double* predictions, int horizon=1){
@@ -215,11 +215,14 @@ namespace ts{
             * 
             * @brief Class constructor.
             * 
+            * @details This constructor can be used to specify model parameters.
+            * 
             * @param[in] weights Array containing the model's weights.
             * @param[in] constant The model's intercept value.
+            * @param[in] sigma2 Estimated variance.
             * 
             ********************************************************************************/
-            MA(double (&weights[q]), double constant=0.0) : _weights(weights), _constant(constant){};
+            MA(double (&weights[q]), double constant=0.0, double sigma2=0.0) : _weights(weights), _constant(constant), _sigma2(sigma2){};
 
             /*******************************************************************************
             * 
@@ -228,7 +231,7 @@ namespace ts{
             * @return Array of model weights.
             * 
             ********************************************************************************/
-            double& get_weights() const { return _weights; };
+            double* get_weights() const { return _weights; };
             
             /*******************************************************************************
             * 
@@ -237,7 +240,16 @@ namespace ts{
             * @return Model intercept.
             * 
             ********************************************************************************/
-            double& get_constant() const { return _constant; };
+            double get_constant() const { return _constant; };
+
+            /*******************************************************************************
+            * 
+            * @brief Get the current variance.
+            * 
+            * @return Variance.
+            * 
+            ********************************************************************************/
+            double get_variance() const { return _sigma2; };
 
             /*******************************************************************************
             * 
@@ -267,10 +279,76 @@ namespace ts{
                 return;
             };
 
+            /*******************************************************************************
+            * 
+            * @brief Set variance.
+            * 
+            * @param[in] constant New variance.
+            * 
+            ********************************************************************************/
+            void set_variance(double sigma2){
+
+                _sigma2 = sigma2;
+
+                return;
+            };
+
+            /*******************************************************************************
+            * 
+            * @brief Compute forecasts.
+            * 
+            * @details This method can be used to compute h step ahead forecasts, where h is
+            *   the forecast horizon. Its time complexity is O(qh**2), where q is the order
+            *   of the model and h is the forecast horizon.
+            * 
+            * @param[out] predictions Model forecasts. The prediction that goes further into
+            *   the future comes last.
+            * @param[in] horizon Forecast horizon.
+            * 
+            ********************************************************************************/
+            void forecast(double* predictions, int horizon=1){
+
+                // Initialise indices and buffer.
+
+                _wrinting_index = 0;
+                _length_index = p;
+                Gaussian dist(0, _sigma2);
+
+                for(size_t i=0; i<p; i++){
+
+                    _data_buffer[i] = dist.random();
+
+                }
+
+                // Compute forecasts. Most recent data point last.
+
+                for(size_t i=0; i<horizon; i++){
+
+                    for(size_t j=_wrinting_index; j<_length_index, j++){
+
+                        predictions[i] += _weights[j % p] * _data_buffer[j % p];
+
+                    }
+
+                    _data_buffer[i % p] = dist.random(); // What's the right buffer index?
+                    _wrinting_index++;
+                    _length_index++;
+
+                }
+
+                return;
+
+            };
+
         private:
 
             double _weights[q] = {0};
             double _constant = 0.0;
+            double _sigma2 = 0.0;
+            double _data_buffer[p] = {0};
+            size_t _wrinting_index = 0;
+            size_t _length_index = 0;
+
     };
 
 };
