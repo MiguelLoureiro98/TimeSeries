@@ -10,8 +10,8 @@ TimeSeries currently supports the following models:
 
 | Model | Class | Description | Status |
 | :----: | :----: | :----: | :----: |
-| AR | AR | An autoregressive model. | Under development. |
-| MA | MA | A moving average model. | Under development. |
+| AR(p) | AR | An autoregressive model of order p. | Under development. |
+| MA(q) | MA | A moving average model of order q. | Under development. |
 
 Multi-step forecasting is supported.
 
