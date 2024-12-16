@@ -160,7 +160,7 @@ namespace ts{
 
                 for(size_t i=0; i<horizon; i++){
 
-                    for(size_t j=_wrinting_index; j<_length_index, j++){
+                    for(size_t j=_wrinting_index; j<_length_index; j++){
 
                         predictions[i] += _weights[j % p] * _data_buffer[j % p];
 
@@ -222,7 +222,7 @@ namespace ts{
             * @param[in] sigma2 Estimated variance.
             * 
             ********************************************************************************/
-            MA(double (&weights[q]), double constant=0.0, double sigma2=0.0) : _weights(weights), _constant(constant), _sigma2(sigma2){};
+            MA(double (&weights)[q], double constant=0.0, double sigma2=0.0) : _weights(weights), _constant(constant), _sigma2(sigma2){};
 
             /*******************************************************************************
             * 
@@ -311,7 +311,7 @@ namespace ts{
                 // Initialise indices and buffer.
 
                 _wrinting_index = 0;
-                _length_index = p;
+                _length_index = q;
                 Gaussian dist(0, _sigma2);
 
                 for(size_t i=0; i<p; i++){
@@ -324,13 +324,13 @@ namespace ts{
 
                 for(size_t i=0; i<horizon; i++){
 
-                    for(size_t j=_wrinting_index; j<_length_index, j++){
+                    for(size_t j=_wrinting_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j % p] * _data_buffer[j % p];
+                        predictions[i] += _weights[j % q] * _data_buffer[j % q];
 
                     }
 
-                    _data_buffer[i % p] = dist.random(); // What's the right buffer index?
+                    _data_buffer[i % q] = dist.random(); // What's the right buffer index?
                     _wrinting_index++;
                     _length_index++;
 
@@ -345,7 +345,7 @@ namespace ts{
             double _weights[q] = {0};
             double _constant = 0.0;
             double _sigma2 = 0.0;
-            double _data_buffer[p] = {0};
+            double _data_buffer[q] = {0};
             size_t _wrinting_index = 0;
             size_t _length_index = 0;
 
