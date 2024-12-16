@@ -80,7 +80,15 @@ namespace ts{
             * @param[in] constant The model's intercept value.
             * 
             ********************************************************************************/
-            AR(double (&weights)[p], double constant=0.0) : _weights(weights), _constant(constant){};
+            AR(double (&weights)[p], double constant=0.0) : _constant(constant){
+
+                for(size_t i=0; i<p; i++){
+
+                    _weights[i] = weights[i];
+                    
+                }
+
+            };
 
             /*******************************************************************************
             * 
@@ -109,7 +117,11 @@ namespace ts{
             ********************************************************************************/
             void set_weights(double (&weights)[p]){ 
                 
-                _weights = weights;
+                for(size_t i=0; i<p; i++){
+
+                    _weights[i] = weights[i];
+
+                }
                 
                 return; 
             };
@@ -178,7 +190,7 @@ namespace ts{
 
         private:
 
-            double* _weights = nullptr;
+            double _weights[p] = {0};
             double _constant = 0.0;
             double _data_buffer[p] = {0};
             size_t _wrinting_index = 0;
