@@ -128,6 +128,21 @@ namespace ts{
                 return;
             };
 
+            /*******************************************************************************
+            * 
+            * @brief Compute forecasts.
+            * 
+            * @details This method can be used to compute h step ahead forecasts, where h is
+            *   the forecast horizon. Its time complexity is O(ph**2), where p is the order
+            *   of the model and h is the forecast horizon.
+            * 
+            * @param[in] data Data points to feed into the model. The most recent data point 
+            *   must come last, and the oldest one first.
+            * @param[out] predictions Model forecasts. The prediction that goes further into
+            *   the future comes last.
+            * @param[in] horizon Prediction horizon.
+            * 
+            ********************************************************************************/
             void forecast(double (&data)[p], double* predictions, int horizon=1){
 
                 // Initialise indices and buffer.
