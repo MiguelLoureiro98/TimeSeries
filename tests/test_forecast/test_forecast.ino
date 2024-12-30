@@ -74,7 +74,7 @@ test(AR_multi_step){
   double null_pred[2] = {1.0, 1.0};
   double null_true[2] = {0.0, 0.0};
   double odd_model_pred[6] = {0};
-  double odd_model_true[6] = {4.5, 12.5, 13.0, 7.25, 28.75, 22.75};
+  double odd_model_true[6] = {4.5, 12.5, 2.5, 7.25, 39.25, -14.0};
   double even_model_pred[3] = {0};
   double even_model_true[3] = {-46.0, -63.5, -51.0};
 
@@ -88,6 +88,12 @@ test(AR_multi_step){
   for(int i=0; i<6; i++){
 
     assertNear(odd_model_pred[i], odd_model_true[i], 0.00001);
+
+  }
+
+  for(int i=0; i<3; i++){
+
+    assertNear(even_model_pred[i], even_model_true[i], 0.00001);
 
   }
 
