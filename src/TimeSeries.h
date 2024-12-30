@@ -168,6 +168,12 @@ namespace ts{
 
                 }
 
+                for(size_t i=0; i<horizon; i++){
+
+                    predictions[i] = 0.0;
+
+                }
+
                 // Compute forecasts. Most recent data point last.
 
                 for(size_t i=0; i<horizon; i++){
@@ -178,6 +184,7 @@ namespace ts{
 
                     }
 
+                    predictions[i] += _constant;
                     _data_buffer[i % p] = predictions[i]; // What's the right buffer index?
                     _wrinting_index++;
                     _length_index++;
@@ -344,6 +351,12 @@ namespace ts{
 
                 }
 
+                for(size_t i=0; i<horizon; i++){
+
+                    predictions[i] = 0.0;
+
+                }
+
                 // Compute forecasts. Most recent data point last.
 
                 for(size_t i=0; i<horizon; i++){
@@ -354,6 +367,7 @@ namespace ts{
 
                     }
 
+                    predictions[i] += _constant;
                     _data_buffer[i % q] = dist.random(); // What's the right buffer index?
                     _wrinting_index++;
                     _length_index++;
