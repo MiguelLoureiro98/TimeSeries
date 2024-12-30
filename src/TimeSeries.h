@@ -241,7 +241,7 @@ namespace ts{
                     _weights[i] = weights[i];
 
                 }
-                
+
             };
 
             /*******************************************************************************
@@ -280,7 +280,11 @@ namespace ts{
             ********************************************************************************/
             void set_weights(double (&weights)[q]){ 
                 
-                _weights = weights;
+                for(size_t i=0; i<q; i++){
+
+                    _weights[i] = weights[i];
+
+                }
                 
                 return; 
             };
