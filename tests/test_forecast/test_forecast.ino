@@ -24,14 +24,16 @@ test(AR_single_step){
   even_model.forecast(even_data, even_model_pred);
 
   assertNear(null_pred[0], 0.0, 0.00001);
+  assertNear(odd_model_pred[0], 4.5, 0.00001);
+  assertNear(even_model_pred[0], -46.0, 0.00001);
 
 }
 
-//test(MA_single_step){
+test(MA_single_step){
 
+  
 
-
-//}
+}
 
 void setup() {
 
