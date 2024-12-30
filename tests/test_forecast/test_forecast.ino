@@ -99,6 +99,44 @@ test(AR_multi_step){
 
 }
 
+test(MA_multi_step){
+
+  ts::MA<2> null_model;
+  
+  double odd_weights[5] = {1.0, -2.0, 3.5, -1.0, 0.0};
+  double even_weights[8] = {7.0, -4.5, 8.0, -11.5, 0.0, 0.0, 0.0, 1.0};
+
+  ts::MA<5> odd_model(odd_weights, 5.0);
+  ts::MA<8> even_model(even_weights, -10.0);
+
+  double null_pred[2] = {1.0, 1.0};
+  double null_true[2] = {0.0, 0.0};
+  double odd_model_pred[6] = {0};
+  double odd_model_true[6] = {5.0, 5.0, 5.0, 5.0, 5.0, 5.0};
+  double even_model_pred[3] = {0};
+  double even_model_true[3] = {-10.0, -10.0, -10.0};
+
+  null_model.forecast(null_pred, 2);
+  odd_model.forecast(odd_model_pred, 6);
+  even_model.forecast(even_model_pred, 3);
+
+  assertNear(null_pred[0], 0.0, 0.00001);
+  assertNear(null_pred[1], 0.0, 0.00001);
+
+  for(int i=0; i<6; i++){
+
+    assertNear(odd_model_pred[i], odd_model_true[i], 0.00001);
+
+  }
+
+  for(int i=0; i<3; i++){
+
+    assertNear(even_model_pred[i], even_model_true[i], 0.00001);
+
+  }
+
+}
+
 void setup() {
 
   Serial.begin(9600);
