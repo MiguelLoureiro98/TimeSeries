@@ -180,7 +180,7 @@ namespace ts{
 
                     for(size_t j=_wrinting_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j % p] * _data_buffer[j % p];
+                        predictions[i] += _weights[j - _wrinting_index] * _data_buffer[j % p];
 
                     }
 
@@ -363,7 +363,7 @@ namespace ts{
 
                     for(size_t j=_wrinting_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j % q] * _data_buffer[j % q];
+                        predictions[i] += _weights[j - _wrinting_index] * _data_buffer[j % q];
 
                     }
 
