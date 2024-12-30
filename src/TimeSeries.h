@@ -234,7 +234,15 @@ namespace ts{
             * @param[in] sigma2 Estimated variance.
             * 
             ********************************************************************************/
-            MA(double (&weights)[q], double constant=0.0, double sigma2=0.0) : _weights(weights), _constant(constant), _sigma2(sigma2){};
+            MA(double (&weights)[q], double constant=0.0, double sigma2=0.0) : _constant(constant), _sigma2(sigma2){
+
+                for(size_t i=0; i<q; i++){
+
+                    _weights[i] = weights[i];
+
+                }
+                
+            };
 
             /*******************************************************************************
             * 
