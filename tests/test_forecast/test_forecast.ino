@@ -31,7 +31,29 @@ test(AR_single_step){
 
 test(MA_single_step){
 
-  
+  ts::MA<2> null_model;
+
+  double odd_weights[5] = {1.0, -2.0, 3.5, -1.0, 0.0};
+  double even_weights[8] = {7.0, -4.5, 8.0, -11.5, 0.0, 0.0, 0.0, 1.0};
+
+  ts::MA<5> odd_model(odd_weights, 0.0, 1.0);
+  ts::MA<8> even_model(even_weights, 0.0, 3.0);
+
+  double null_data[2] = {1.0, 2.0};
+  double odd_data[5] = {1.0, 1.0, 1.0, 3.0, 2.0};
+  double even_data[8] = {1.0, 1.0, -2.0, 3.0, 5.0, 0.0, 0.0, 2.0};
+
+  double null_pred[1] = {1.0};
+  double odd_model_pred[1] = {0.0};
+  double even_model_pred[1] = {0.0};
+
+  null_model.forecast(null_pred);
+  odd_model.forecast(odd_model_pred);
+  even_model.forecast(even_model_pred);
+
+  assertNear(null_pred[0], 0.0, 0.0001);
+  assertNotEqual(odd_model_pred[0], 0.0);
+  assertNotEqual(even_model_pred[0], 0.0);
 
 }
 
