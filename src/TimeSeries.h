@@ -33,7 +33,6 @@
 #define __TIME_SERIES_H__
 
 #include <stdint.h>
-#include "Gaussian.h"
 
 /*******************************************************************************
 *
@@ -159,7 +158,7 @@ namespace ts{
 
                 // Initialise indices and buffer.
 
-                _wrinting_index = 0;
+                _writing_index = 0;
                 _length_index = p;
 
                 for(size_t i=0; i<p; i++){
@@ -178,15 +177,15 @@ namespace ts{
 
                 for(size_t i=0; i<horizon; i++){
 
-                    for(size_t j=_wrinting_index; j<_length_index; j++){
+                    for(size_t j=_writing_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j - _wrinting_index] * _data_buffer[j % p];
+                        predictions[i] += _weights[j - _writing_index] * _data_buffer[j % p];
 
                     }
 
                     predictions[i] += _constant;
                     _data_buffer[i % p] = predictions[i]; // What's the right buffer index?
-                    _wrinting_index++;
+                    _writing_index++;
                     _length_index++;
 
                 }
@@ -200,7 +199,7 @@ namespace ts{
             double _weights[p] = {0};
             double _constant = 0.0;
             double _data_buffer[p] = {0};
-            size_t _wrinting_index = 0;
+            size_t _writing_index = 0;
             size_t _length_index = 0;
 
     };
@@ -238,10 +237,9 @@ namespace ts{
             * 
             * @param[in] weights Array containing the model's weights.
             * @param[in] constant The model's intercept value.
-            * @param[in] sigma2 Estimated variance.
             * 
             ********************************************************************************/
-            MA(double (&weights)[q], double constant=0.0, double sigma2=0.0) : _constant(constant), _sigma2(sigma2){
+            MA(double (&weights)[q], double constant=0.0) : _constant(constant){
 
                 for(size_t i=0; i<q; i++){
 
@@ -268,15 +266,6 @@ namespace ts{
             * 
             ********************************************************************************/
             double get_constant() const { return _constant; };
-
-            /*******************************************************************************
-            * 
-            * @brief Get the current variance.
-            * 
-            * @return Variance.
-            * 
-            ********************************************************************************/
-            double get_variance() const { return _sigma2; };
 
             /*******************************************************************************
             * 
@@ -312,42 +301,30 @@ namespace ts{
 
             /*******************************************************************************
             * 
-            * @brief Set variance.
-            * 
-            * @param[in] constant New variance.
-            * 
-            ********************************************************************************/
-            void set_variance(double sigma2){
-
-                _sigma2 = sigma2;
-
-                return;
-            };
-
-            /*******************************************************************************
-            * 
             * @brief Compute forecasts.
             * 
             * @details This method can be used to compute h step ahead forecasts, where h is
             *   the forecast horizon. Its time complexity is O(qh**2), where q is the order
             *   of the model and h is the forecast horizon.
             * 
+            * @param[in] data Data points to feed into the model. The most recent data point 
+            *   must come last, and the oldest one first.
             * @param[out] predictions Model forecasts. The prediction that goes further into
             *   the future comes last.
             * @param[in] horizon Forecast horizon.
             * 
             ********************************************************************************/
-            void forecast(double* predictions, int horizon=1){
+            void forecast(double (&data)[p], double* predictions, int horizon=1){
 
-                // Initialise indices and buffer.
+                // Initialise indices and buffer. "Reset" the offset of the array containing previous predictions.
 
-                _wrinting_index = 0;
+                _writing_index = 0;
                 _length_index = q;
-                Gaussian dist(0, _sigma2);
+                _pred_offset = _pred_offset % q;
 
                 for(size_t i=0; i<q; i++){
 
-                    _data_buffer[i] = dist.random();
+                    _data_buffer[i] = data[i];
 
                 }
 
@@ -361,15 +338,23 @@ namespace ts{
 
                 for(size_t i=0; i<horizon; i++){
 
-                    for(size_t j=_wrinting_index; j<_length_index; j++){
+                    for(size_t j=_writing_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j - _wrinting_index] * _data_buffer[j % q];
+                        predictions[i] += _weights[j - _writing_index] * (_data_buffer[j % q] - _pred_buffer[(j + _pred_offset) % q]);
 
                     }
 
                     predictions[i] += _constant;
-                    _data_buffer[i % q] = dist.random(); // What's the right buffer index?
-                    _wrinting_index++;
+                    
+                    if(i == 0){
+
+                        _pred_buffer[_pred_offset % q] = predictions[i];
+                        _pred_offset++;
+
+                    }
+
+                    _data_buffer[i % q] = 0.0;
+                    _writing_index++;
                     _length_index++;
 
                 }
@@ -382,10 +367,11 @@ namespace ts{
 
             double _weights[q] = {0};
             double _constant = 0.0;
-            double _sigma2 = 0.0;
             double _data_buffer[q] = {0};
-            size_t _wrinting_index = 0;
+            double _pred_buffer[q] = {0};
+            size_t _writing_index = 0;
             size_t _length_index = 0;
+            size_t _pred_offset = 0;
 
     };
 
