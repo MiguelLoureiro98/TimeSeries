@@ -324,7 +324,7 @@ namespace ts{
 
                 for(size_t i=0; i<q; i++){
 
-                    _data_buffer[i] = data[i];
+                    _data_buffer[i] = data[i] - _pred_buffer[i + _pred_offset];
 
                 }
 
@@ -340,7 +340,7 @@ namespace ts{
 
                     for(size_t j=_writing_index; j<_length_index; j++){
 
-                        predictions[i] += _weights[j - _writing_index] * (_data_buffer[j % q] - _pred_buffer[(j + _pred_offset) % q]);
+                        predictions[i] += _weights[j - _writing_index] * _data_buffer[j % q];
 
                     }
 
