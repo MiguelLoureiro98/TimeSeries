@@ -141,18 +141,27 @@ namespace ts{
 
             /*******************************************************************************
             * 
-            * @brief Compute forecasts.
+            * @brief Compute model forecasts.
             * 
             * @details This method can be used to compute h step ahead forecasts, where h is
-            *   the forecast horizon. Its time complexity is O(ph**2), where p is the order
+            *   the forecast horizon. Its time complexity is O(ph), where p is the order
             *   of the model and h is the forecast horizon.
             * 
-            * @param[in] data Data points to feed into the model. The most recent data point 
-            *   must come last, and the oldest one first.
+            * @param[in] data Input data. The most recent data point must come last, and the 
+            *   oldest one first.
             * @param[out] predictions Model forecasts. The prediction that goes further into
             *   the future comes last.
-            * @param[in] horizon Forecast horizon.
+            * @param[in] horizon Forecast horizon. Optional parameter. Default=1.
             * 
+            * @note The length l of the predictions array must satisfy the following 
+            *   condition: l >= horizon. If l > horizon, the values in the first l 
+            *   positions of the array will be overwritten.
+            *
+            * @warning This method resets the predictions array before storing any 
+            *   prediction. This is to make sure that model predictions are not affected by
+            *   a non-zero value in the array. Keep this in mind when supplying and 
+            *   retrieving a predictions array.
+            *
             ********************************************************************************/
             void forecast(double (&data)[p], double* predictions, int horizon=1){
 
@@ -301,18 +310,26 @@ namespace ts{
 
             /*******************************************************************************
             * 
-            * @brief Compute forecasts.
+            * @brief Compute model forecasts.
             * 
             * @details This method can be used to compute h step ahead forecasts, where h is
-            *   the forecast horizon. Its time complexity is O(qh**2), where q is the order
+            *   the forecast horizon. Its time complexity is O(qh), where q is the order
             *   of the model and h is the forecast horizon.
             * 
-            * @param[in] data Data points to feed into the model. The most recent data point 
-            *   must come last, and the oldest one first.
+            * @param[in] data Input data. The most recent data point must come last, and the 
+            *   oldest one first.
             * @param[out] predictions Model forecasts. The prediction that goes further into
             *   the future comes last.
-            * @param[in] horizon Forecast horizon.
+            * @param[in] horizon Forecast horizon. Optional parameter. Default=1.
             * 
+            * @note The length l of the predictions array must satisfy the following 
+            *   condition: l >= horizon. If l > horizon, the values in the first l 
+            *   positions of the array will be overwritten.
+            *
+            * @warning This method resets the predictions array before storing any 
+            *   prediction. This is to make sure that model predictions are not affected by
+            *   a non-zero value in the array. Keep this in mind when supplying and 
+            *   retrieving a predictions array.
             ********************************************************************************/
             void forecast(double (&data)[q], double* predictions, int horizon=1){
 
