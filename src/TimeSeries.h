@@ -314,7 +314,7 @@ namespace ts{
             * @param[in] horizon Forecast horizon.
             * 
             ********************************************************************************/
-            void forecast(double (&data)[p], double* predictions, int horizon=1){
+            void forecast(double (&data)[q], double* predictions, int horizon=1){
 
                 // Initialise indices and buffer. "Reset" the offset of the array containing previous predictions.
 
@@ -324,7 +324,7 @@ namespace ts{
 
                 for(size_t i=0; i<q; i++){
 
-                    _data_buffer[i] = data[i] - _pred_buffer[i + _pred_offset];
+                    _data_buffer[i] = data[i] - _pred_buffer[(i + _pred_offset) % q];
 
                 }
 
