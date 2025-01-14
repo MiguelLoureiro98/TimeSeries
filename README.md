@@ -22,7 +22,7 @@ TimeSeries currently supports the following models:
 
 For more information on these models, see [[2](#2), [3](#3), [4](#4)].
 
-When forecasting using an n<sup>th-order model<sup> and a forecasting horizon of h, the time and memory complexities of the models are as follows:
+When forecasting using an n<sup>th-order model</sup> and a forecasting horizon of h, the time and memory complexities of the models are as follows:
 
 | Model | Time complexity | Memory complexity |
 | :----: | :----: | :----: |
