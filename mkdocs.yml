@@ -1,1 +1,73 @@
-site_name: My Docs
+site_name: TimeSeries - Arduino Library
+site_url: https://miguelloureiro98.github.io/TimeSeries/
+repo_url: https://github.com/MiguelLoureiro98/TimeSeries
+
+theme:
+  #logo: logos/logo.jpg
+  #favicon: logos/favicon.jpg
+  icon:
+    repo: fontawesome/brands/github
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.share
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: green
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+      primary: teal
+      accent: green
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/miguel-santos-loureiro/
+      name: Miguel Loureiro's LinkedIn page
+    - icon: fontawesome/brands/github
+      link: https://github.com/MiguelLoureiro98
+      name: Miguel Loureiro's GitHub page
+
+copyright: Copyright &copy; 2024 Miguel Loureiro
+
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        TimeSeries: # name of project must be alphanumeric + numbers (without spaces)
+          src-dirs: src/ # path to source code (support multiple paths separated by space) => INPUT
+          full-doc: True # if you want to generate full documentation
+          doxy-cfg: # standard doxygen configuration (key: value)
+            FILE_PATTERNS: "*.h" # specify file patterns to filter out
+            RECURSIVE: True # recursive search in source directories
+            JAVADOC_AUTOBRIEF: True
+            JAVADOC_BANNER: True
+            JAVADOC_BLOCK: True
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
