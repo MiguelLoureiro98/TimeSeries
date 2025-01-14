@@ -9,9 +9,9 @@ The library provides support for well-known statistical forecasting models, such
 - **Dependency-free**: at the moment, this library is completely dependency-free;
 - **Dynamic-memory-free**: every model provided by the library is implemented statically using templates and circular buffers;
 - **Compatibility**: as it makes no use of any board-specific instructions/features, this library should be compatible with almost every Arduino board;
-- **Support for multi-step forecasting**: the library supports recursive multi-step forecasting. Although only the recursive method is implemented directly, direct methods could of course be used by instantiating multiple models. See Sahoo et al. [1] for more details on these multi-step forecasting methods.
+- **Support for multi-step forecasting**: the library supports recursive multi-step forecasting. Although only the recursive method is implemented directly, direct methods could of course be used by instantiating multiple models. See Sahoo et al. [[1]](#1) for more details on these multi-step forecasting methods.
 
-[1] Debashis Sahoo, Naveksha Sood, Usha Rani, George Abraham, Varun Dutt, and AD Dileep. Comparative analysis of multi-step time-series forecasting for network load dataset. In 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), pages 1–7. IEEE, 2020.
+<a id="1">[1]</a> Debashis Sahoo, Naveksha Sood, Usha Rani, George Abraham, Varun Dutt, and AD Dileep. Comparative analysis of multi-step time-series forecasting for network load dataset. In 2020 11th International Conference on Computing, Communication and Networking Technologies (ICCCNT), pages 1–7. IEEE, 2020.
 
 ## Supported models
 
