@@ -2,7 +2,7 @@
 
 TimeSeries is an Arduino library for time series forecasting.
 
-The library provides support for well-known statistical forecasting models, such as autoregressive models and moving average models. Recursive multi-step forecasting is supported.
+The library provides support for well-known statistical forecasting models, such as autoregressive and moving average models. Recursive multi-step forecasting is supported.
 
 ## Features
 
@@ -31,6 +31,14 @@ When forecasting using an n<sup>th</sup> order model and a forecasting horizon o
 
 **Note**: these values were simply derived from the code, and are thus purely indicative. Computational experiments will be conducted in the future.
 
+## Installation
+
+TimeSeries will soon be submitted to the official Arduino library index. Once it is accepted, it will be available for download using the Arduino IDE. Alternatively, once the first release is published, the library will be available for [download directly from Github](https://www.youtube.com/watch?v=WuqEAUirXw0).
+
+## Documentation
+
+An official documentation website will soon be made available.
+
 ## Future work
 
 These features are currently not supported, but may be included in future versions of the library:
@@ -44,15 +52,10 @@ These features are currently not supported, but may be included in future versio
 - **Prediction accuracy estimation (depending on the prediction horizon)**;
 - **Support for directional forecasting**;
 - **Support for interval forecasting**;
-- **Support for online training** (for some models, at least).
+- **Support for online training** (for some models, at least);
+- **Complementary Python libraries** (so the library can be used to deploy models trained in Python).
 
-## Installation
-
-TimeSeries will soon be submitted to the official Arduino library index. Once it is accepted, it will be available for download using the Arduino IDE. Alternatively, once the first release is published, the library will be available for [download directly from Github](https://www.youtube.com/watch?v=WuqEAUirXw0).
-
-## Documentation
-
-An official documentation website will soon be made available.
+**Note**: some of these might actually result in separate libraries.
 
 ## References
 
