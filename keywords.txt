@@ -1,5 +1,5 @@
 #######################################
-# Syntax Coloring Map LM35IC
+# Syntax Coloring Map TimeSeries
 #######################################
 
 #######################################
@@ -15,10 +15,8 @@ MA  KEYWORD1
 
 get_weights    KEYWORD2
 get_constant    KEYWORD2
-get_variance   KEYWORD2
 set_weights KEYWORD2
 set_constant  KEYWORD2
-set_variance  KEYWORD2
 forecast    KEYWORD2
 
 #######################################
