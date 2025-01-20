@@ -6,4 +6,4 @@ Here you will find detailed information on the classes, methods, and functions t
 
 If you are unsure of what to look for, take a look at the [API index](TimeSeries/annotated.md).
 
-Alternatively, you can always jump directly to the [AR model class](TimeSeries/classts_1_1AR.md) or the [MA model class](classts_1_1MA.md).
+Alternatively, you can always jump directly to the [AR model class](TimeSeries/classts_1_1AR.md) or the [MA model class](TimeSeries/classts_1_1MA.md).
