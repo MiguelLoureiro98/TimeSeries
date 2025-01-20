@@ -3,8 +3,6 @@ site_url: https://miguelloureiro98.github.io/TimeSeries/
 repo_url: https://github.com/MiguelLoureiro98/TimeSeries
 
 theme:
-  #logo: logos/logo.jpg
-  #favicon: logos/favicon.jpg
   icon:
     repo: fontawesome/brands/github
   name: material
@@ -43,7 +41,7 @@ extra:
       link: https://github.com/MiguelLoureiro98
       name: Miguel Loureiro's GitHub page
 
-copyright: Copyright &copy; 2024 Miguel Loureiro
+copyright: Copyright &copy; 2025 Miguel Loureiro
 
 plugins:
   - search
