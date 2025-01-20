@@ -69,3 +69,44 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+nav:
+- Home: index.md
+- First steps: installation.md
+- API Reference: 
+  - Main page: API_ref.md
+  - API Index: TimeSeries/annotated.md
+  - Namespace list: TimeSeries/namespaces.md
+  - ts namespace: TimeSeries/namespacets.md
+  - AR template class: TimeSeries/classts_1_1AR.md
+  - MA template class: TimeSeries/classts_1_1MA.md
+- Examples:
+  - examples/index.md
+  - Basic usage: examples/basics.md
+  - Multi-step forecasting: examples/multi-step.md
+  - Change model parameters: examples/change_param.md
+- About: about.md
+
+not_in_nav: |
+  /TimeSeries/files.md
+  /TimeSeries/dir_68267d1309a1af8e8297ef4c3efbcdba.md
+  /TimeSeries/TimeSeries_8h.md
+  /TimeSeries/TimeSeries_8h_source.md
+  /TimeSeries/classes.md
+  /TimeSeries/hierarchy.md
+  /TimeSeries/modules.md
+  /TimeSeries/pages.md
+  /TimeSeries/class_members.md
+  /TimeSeries/class_member_functions.md
+  /TimeSeries/class_member_variables.md
+  /TimeSeries/class_member_typedefs.md
+  /TimeSeries/class_member_enums.md
+  /TimeSeries/namespace_members.md
+  /TimeSeries/namespace_member_functions.md
+  /TimeSeries/namespace_member_variables.md
+  /TimeSeries/namespace_member_typedefs.md
+  /TimeSeries/namespace_member_enums.md
+  /TimeSeries/functions.md
+  /TimeSeries/macros.md
+  /TimeSeries/variables.md
+  /TimeSeries/links.md
