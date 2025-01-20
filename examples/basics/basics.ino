@@ -53,7 +53,6 @@ void setup() {
 void loop() {
   
   double current_time = millis(); // Check the current time.
-  double measurement = 0.0; // Variable that will be used to collect the next sample.
   double forecast = 0.0; // Variable that will contain the forecast.
 
   // If enough time has passed, collect another sample.
@@ -76,7 +75,7 @@ void loop() {
 
     // Print the most recent measurement and the corresponding forecast to the serial plotter.
     Serial.print("Sensor_measurement");
-    Serial.print(measurement);
+    Serial.print(data[4]);
     Serial.print(",");
     Serial.print("Forecast");
     Serial.println(forecast);
