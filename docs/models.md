@@ -4,8 +4,8 @@ TimeSeries currently supports the following models:
 
 | Model | Class | Description | One-step forecasting | Multi-step forecasting |
 | :----: | :----: | :----: | :----: | :----: |
-| AR(p) | AR | An autoregressive model of order p. | Fully tested. | Fully tested. |
-| MA(q) | MA | A moving average model of order q. | Fully tested. | Fully tested. |
+| AR(p) | [AR](TimeSeries/classts_1_1AR.md) | An autoregressive model of order p. | Fully tested. | Fully tested. |
+| MA(q) | [MA](TimeSeries/classts_1_1MA.md) | A moving average model of order q. | Fully tested. | Fully tested. |
 
 For more information on these models, see [[1](#1), [2](#2), [3](#3)].
 
