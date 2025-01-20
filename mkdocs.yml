@@ -73,6 +73,7 @@ markdown_extensions:
 nav:
 - Home: index.md
 - First steps: installation.md
+- Models: models.md
 - API Reference: 
   - Main page: API_ref.md
   - API Index: TimeSeries/annotated.md
