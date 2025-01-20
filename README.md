@@ -39,6 +39,14 @@ TimeSeries will soon be submitted to the official Arduino library index. Once it
 
 An official documentation website will soon be made available.
 
+## Examples
+
+Check out the following examples for some guidance on how to use the library:
+
+- [Basic usage (one step ahead forecasting)](examples/basics/basics.ino);
+- [Multi-step ahead forecasting](examples/multi_step/multi_step.ino);
+- [Change model parameters](examples/change_parameters/change_parameters.ino).
+
 ## Future work
 
 These features are currently not supported, but may be included in future versions of the library:
