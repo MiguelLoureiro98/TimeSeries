@@ -6,7 +6,7 @@ The library provides support for well-known statistical forecasting models, such
 
 ## Features
 
-- **Dependency-free**: at the moment, this library is completely dependency-free;
+- **Dependency-free**: the library is completely dependency-free;
 - **Dynamic-memory-free**: every model provided by the library is implemented statically using templates and circular buffers;
 - **Compatibility**: as it makes no use of any board-specific instructions/features, this library should be compatible with almost every Arduino board;
 - **Support for multi-step forecasting**: the library supports recursive multi-step forecasting. Although only the recursive method is implemented directly, direct methods could of course be used by instantiating multiple models. See Sahoo et al. [[1]](#1) for more details on these multi-step forecasting methods.
@@ -33,11 +33,11 @@ When forecasting using an n<sup>th</sup> order model and a forecasting horizon o
 
 ## Installation
 
-TimeSeries will soon be submitted to the official Arduino library index. Once it is accepted, it will be available for download using the Arduino IDE. Alternatively, once the first release is published, the library will be available for [download directly from Github](https://www.youtube.com/watch?v=WuqEAUirXw0).
+TimeSeries is available for installation via the official Arduino library index. You can therefore [download it using the Arduino IDE](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library/). Alternatively, the library is available for [download directly from Github](https://www.youtube.com/watch?v=WuqEAUirXw0).
 
 ## Documentation
 
-An official documentation website will soon be made available.
+The official documentation is available at [https://miguelloureiro98.github.io/TimeSeries/](https://miguelloureiro98.github.io/TimeSeries/).
 
 ## Examples
 
