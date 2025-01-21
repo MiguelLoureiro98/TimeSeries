@@ -1,3 +1,5 @@
+[![docs](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/docs.yml/badge.svg)](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/docs.yml)
+
 # TimeSeries
 
 TimeSeries is an Arduino library for time series forecasting.
