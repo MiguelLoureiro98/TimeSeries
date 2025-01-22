@@ -1,3 +1,9 @@
+[![tests](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/tests.yml/badge.svg)](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/tests.yml)
+
+[![examples](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/examples.yml/badge.svg)](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/examples.yml)
+
+[![linter](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/linter.yml/badge.svg)](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/linter.yml)
+
 [![docs](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/docs.yml/badge.svg)](https://github.com/MiguelLoureiro98/TimeSeries/actions/workflows/docs.yml)
 
 # TimeSeries
