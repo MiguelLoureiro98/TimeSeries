@@ -1,0 +1,26 @@
+name: linter
+
+on:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run linter
+        uses: arduino/arduino-lint-action@v2
+        with:
+          library-manager: update
+          compliance: strict
+          project-type: library
+          recursive: false
