@@ -28,4 +28,4 @@ jobs:
         uses: ArminJo/arduino-test-compile@v3
         with:
           sketch-names: "*.ino"
-          sketch-names-find-start: extra/tests/
+          sketch-names-find-start: extras/tests/
