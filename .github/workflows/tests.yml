@@ -24,15 +24,9 @@ jobs:
           ref: main
           path: CustomTimeSeries
 
-      - name: Checkout ArduinoUnit
-        uses: actions/checkout@v4
-        with:
-          repository: mmurdoch/arduinounit
-          ref: main
-          path: CustomArduinoUnit
-
       - name: Compile tests
         uses: ArminJo/arduino-test-compile@v3
         with:
           sketch-names: "*.ino"
           sketch-names-find-start: extras/tests/
+          required-libraries: ArduinoUnit@3.0.4
