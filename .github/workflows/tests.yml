@@ -17,12 +17,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout custom library
+      - name: Checkout TimeSeries library
         uses: actions/checkout@v4
         with:
           repository: MiguelLoureiro98/TimeSeries
           ref: main
           path: CustomTimeSeries
+
+      - name: Checkout ArduinoUnit
+        uses: actions/checkout@v4
+        with:
+          repository: mmurdoch/arduinounit
+          ref: main
+          path: CustomArduinoUnit
 
       - name: Compile tests
         uses: ArminJo/arduino-test-compile@v3
