@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classts_1_1MA" kind="class" language="C++" prot="public">
+    <compoundname>ts::MA</compoundname>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>q</declname>
+        <defname>q</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classts_1_1MA_1acf61f68c24a06d511fae0c8ca688c86d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ts::MA&lt; q &gt;::_weights[q]</definition>
+        <argsstring>[q]</argsstring>
+        <name>_weights</name>
+        <qualifiedname>ts::MA::_weights</qualifiedname>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="385" column="20" bodyfile="src/TimeSeries.h" bodystart="385" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1aa0aae9a4a60e4b7cabdb211e2348ed21" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ts::MA&lt; q &gt;::_constant</definition>
+        <argsstring></argsstring>
+        <name>_constant</name>
+        <qualifiedname>ts::MA::_constant</qualifiedname>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="386" column="20" bodyfile="src/TimeSeries.h" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1a7e6be89c62086fbe00e0f4b655816b72" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ts::MA&lt; q &gt;::_data_buffer[q]</definition>
+        <argsstring>[q]</argsstring>
+        <name>_data_buffer</name>
+        <qualifiedname>ts::MA::_data_buffer</qualifiedname>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="387" column="20" bodyfile="src/TimeSeries.h" bodystart="387" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1a680286d5d5ad1c7b0890619b7e8ed23e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ts::MA&lt; q &gt;::_pred_buffer[q]</definition>
+        <argsstring>[q]</argsstring>
+        <name>_pred_buffer</name>
+        <qualifiedname>ts::MA::_pred_buffer</qualifiedname>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="388" column="20" bodyfile="src/TimeSeries.h" bodystart="388" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1af7b53c281b02badca481cb7aad0997eb" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ts::MA&lt; q &gt;::_writing_index</definition>
+        <argsstring></argsstring>
+        <name>_writing_index</name>
+        <qualifiedname>ts::MA::_writing_index</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="389" column="20" bodyfile="src/TimeSeries.h" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1afdd9c14d17dc96664284db7e53ddedac" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ts::MA&lt; q &gt;::_length_index</definition>
+        <argsstring></argsstring>
+        <name>_length_index</name>
+        <qualifiedname>ts::MA::_length_index</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="390" column="20" bodyfile="src/TimeSeries.h" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classts_1_1MA_1a5b7be2646d422c068bd851cd94ef7afc" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ts::MA&lt; q &gt;::_pred_offset</definition>
+        <argsstring></argsstring>
+        <name>_pred_offset</name>
+        <qualifiedname>ts::MA::_pred_offset</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="391" column="20" bodyfile="src/TimeSeries.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classts_1_1MA_1af7a8a3ae4e2db0e548a77320167ad623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ts::MA&lt; q &gt;::MA</definition>
+        <argsstring>()=default</argsstring>
+        <name>MA</name>
+        <qualifiedname>ts::MA::MA</qualifiedname>
+        <briefdescription>
+<para>Default class constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="239" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1aefb00f6e1026ccac7efffa72131b89b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ts::MA&lt; q &gt;::MA</definition>
+        <argsstring>(double(&amp;weights)[q], double constant=0.0)</argsstring>
+        <name>MA</name>
+        <qualifiedname>ts::MA::MA</qualifiedname>
+        <param>
+          <type>double(&amp;)</type>
+          <declname>weights</declname>
+          <array>[q]</array>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>constant</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+<para>Class constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor can be used to specify model parameters.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">weights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array containing the model&apos;s weights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">constant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model&apos;s intercept value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="251" column="13" bodyfile="src/TimeSeries.h" bodystart="251" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1a430775bb3d411692c640eebe469a2c77" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double *</type>
+        <definition>double * ts::MA&lt; q &gt;::get_weights</definition>
+        <argsstring>() const</argsstring>
+        <name>get_weights</name>
+        <qualifiedname>ts::MA::get_weights</qualifiedname>
+        <briefdescription>
+<para>Get the current weights. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Array of model weights. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="268" column="20" bodyfile="src/TimeSeries.h" bodystart="268" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1ac2b85e8e2e8e489d7870657e6fc8c13a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double ts::MA&lt; q &gt;::get_constant</definition>
+        <argsstring>() const</argsstring>
+        <name>get_constant</name>
+        <qualifiedname>ts::MA::get_constant</qualifiedname>
+        <briefdescription>
+<para>Get the current intercept. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Model intercept. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="277" column="20" bodyfile="src/TimeSeries.h" bodystart="277" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1a0b6626ab7075937f69bab5d0d756d249" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ts::MA&lt; q &gt;::set_weights</definition>
+        <argsstring>(double(&amp;weights)[q])</argsstring>
+        <name>set_weights</name>
+        <qualifiedname>ts::MA::set_weights</qualifiedname>
+        <param>
+          <type>double(&amp;)</type>
+          <declname>weights</declname>
+          <array>[q]</array>
+        </param>
+        <briefdescription>
+<para>Set model weights. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">weights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of new weights. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="286" column="18" bodyfile="src/TimeSeries.h" bodystart="286" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1ab3a80eb569001b939ef9e3af280538e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ts::MA&lt; q &gt;::set_constant</definition>
+        <argsstring>(double constant)</argsstring>
+        <name>set_constant</name>
+        <qualifiedname>ts::MA::set_constant</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>constant</declname>
+        </param>
+        <briefdescription>
+<para>Set model intercept value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">constant</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New intercept value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="304" column="18" bodyfile="src/TimeSeries.h" bodystart="304" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classts_1_1MA_1aba1a145d8143eca1fac7224b5d5dce98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ts::MA&lt; q &gt;::forecast</definition>
+        <argsstring>(double(&amp;data)[q], double *predictions, int horizon=1)</argsstring>
+        <name>forecast</name>
+        <qualifiedname>ts::MA::forecast</qualifiedname>
+        <param>
+          <type>double(&amp;)</type>
+          <declname>data</declname>
+          <array>[q]</array>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>predictions</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>horizon</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Compute model forecasts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method can be used to compute h step ahead forecasts, where h is the forecast horizon. Its time complexity is O(qh), where q is the order of the model and h is the forecast horizon.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input data. The most recent data point must come last, and the oldest one first. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">predictions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model forecasts. The prediction that goes further into the future comes last. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">horizon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Forecast horizon. Optional parameter. Default=1.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The length l of the predictions array must satisfy the following condition: l &gt;= horizon. If l &gt; horizon, the values in the first l positions of the array will be overwritten.</para>
+</simplesect>
+<simplesect kind="warning"><para>This method resets the predictions array before storing any prediction. This is to make sure that model predictions are not affected by a non-zero value in the array. Keep this in mind when supplying and retrieving a predictions array. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/TimeSeries.h" line="334" column="18" bodyfile="src/TimeSeries.h" bodystart="334" bodyend="381"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>template. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Template for generating <ref refid="classts_1_1MA" kindref="compound">MA</ref> model classes.</para>
+<para>This class template implements the operations associated with a moving average (<ref refid="classts_1_1MA" kindref="compound">MA</ref>) model. These include setting the model&apos;s weights and constant and forecasting future values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Order of the <ref refid="classts_1_1MA" kindref="compound">MA</ref> model. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="src/TimeSeries.h" line="230" column="5" bodyfile="src/TimeSeries.h" bodystart="230" bodyend="393"/>
+    <listofallmembers>
+      <member refid="classts_1_1MA_1aa0aae9a4a60e4b7cabdb211e2348ed21" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_constant</name></member>
+      <member refid="classts_1_1MA_1a7e6be89c62086fbe00e0f4b655816b72" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_data_buffer</name></member>
+      <member refid="classts_1_1MA_1afdd9c14d17dc96664284db7e53ddedac" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_length_index</name></member>
+      <member refid="classts_1_1MA_1a680286d5d5ad1c7b0890619b7e8ed23e" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_pred_buffer</name></member>
+      <member refid="classts_1_1MA_1a5b7be2646d422c068bd851cd94ef7afc" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_pred_offset</name></member>
+      <member refid="classts_1_1MA_1acf61f68c24a06d511fae0c8ca688c86d" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_weights</name></member>
+      <member refid="classts_1_1MA_1af7b53c281b02badca481cb7aad0997eb" prot="private" virt="non-virtual"><scope>ts::MA</scope><name>_writing_index</name></member>
+      <member refid="classts_1_1MA_1aba1a145d8143eca1fac7224b5d5dce98" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>forecast</name></member>
+      <member refid="classts_1_1MA_1ac2b85e8e2e8e489d7870657e6fc8c13a" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>get_constant</name></member>
+      <member refid="classts_1_1MA_1a430775bb3d411692c640eebe469a2c77" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>get_weights</name></member>
+      <member refid="classts_1_1MA_1af7a8a3ae4e2db0e548a77320167ad623" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>MA</name></member>
+      <member refid="classts_1_1MA_1aefb00f6e1026ccac7efffa72131b89b1" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>MA</name></member>
+      <member refid="classts_1_1MA_1ab3a80eb569001b939ef9e3af280538e9" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>set_constant</name></member>
+      <member refid="classts_1_1MA_1a0b6626ab7075937f69bab5d0d756d249" prot="public" virt="non-virtual"><scope>ts::MA</scope><name>set_weights</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

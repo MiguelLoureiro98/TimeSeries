@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacets" kind="namespace" language="C++">
+    <compoundname>ts</compoundname>
+    <innerclass refid="classts_1_1AR" prot="public">ts::AR</innerclass>
+    <innerclass refid="classts_1_1MA" prot="public">ts::MA</innerclass>
+    <briefdescription>
+<para>The library&apos;s namespace. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Namespace containing the classes provided by the TimeSeries library, namely the <ref refid="classts_1_1AR" kindref="compound">AR</ref> and <ref refid="classts_1_1MA" kindref="compound">MA</ref> classes. </para>
+    </detaileddescription>
+    <location file="src/TimeSeries.h" line="39" column="1"/>
+  </compounddef>
+</doxygen>

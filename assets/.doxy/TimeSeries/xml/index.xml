@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classts_1_1AR" kind="class"><name>ts::AR</name>
+    <member refid="classts_1_1AR_1a8bea2cd1e8d01a1260e4149a516cf5ac" kind="variable"><name>_weights</name></member>
+    <member refid="classts_1_1AR_1a905c943303e8cc5e537b1dbdd2194d26" kind="variable"><name>_constant</name></member>
+    <member refid="classts_1_1AR_1a0e5a0cfe48ee993ea7ea85283d5075d5" kind="variable"><name>_data_buffer</name></member>
+    <member refid="classts_1_1AR_1a9ab269eaf3a3306d31f4b77ce2b95fcf" kind="variable"><name>_writing_index</name></member>
+    <member refid="classts_1_1AR_1a9233ba84249d0dd4d69ffe4ab3185bbe" kind="variable"><name>_length_index</name></member>
+    <member refid="classts_1_1AR_1a30b766866bff8060f1ce96eba63994fc" kind="function"><name>AR</name></member>
+    <member refid="classts_1_1AR_1a8a5a5c7f4f98a6ab31eda8df838dbb79" kind="function"><name>AR</name></member>
+    <member refid="classts_1_1AR_1a15d8bd14f8b9c1a8a4f6b9142d747a4b" kind="function"><name>get_weights</name></member>
+    <member refid="classts_1_1AR_1a77ec0c1b06c000d97507d2d71052d539" kind="function"><name>get_constant</name></member>
+    <member refid="classts_1_1AR_1a1e92ad1cc2ea9054964235e887caa801" kind="function"><name>set_weights</name></member>
+    <member refid="classts_1_1AR_1a29d11f583423c3aa5774bc015ac6557f" kind="function"><name>set_constant</name></member>
+    <member refid="classts_1_1AR_1a6635a2d5e4885853d2c232813a98afdb" kind="function"><name>forecast</name></member>
+  </compound>
+  <compound refid="classts_1_1MA" kind="class"><name>ts::MA</name>
+    <member refid="classts_1_1MA_1acf61f68c24a06d511fae0c8ca688c86d" kind="variable"><name>_weights</name></member>
+    <member refid="classts_1_1MA_1aa0aae9a4a60e4b7cabdb211e2348ed21" kind="variable"><name>_constant</name></member>
+    <member refid="classts_1_1MA_1a7e6be89c62086fbe00e0f4b655816b72" kind="variable"><name>_data_buffer</name></member>
+    <member refid="classts_1_1MA_1a680286d5d5ad1c7b0890619b7e8ed23e" kind="variable"><name>_pred_buffer</name></member>
+    <member refid="classts_1_1MA_1af7b53c281b02badca481cb7aad0997eb" kind="variable"><name>_writing_index</name></member>
+    <member refid="classts_1_1MA_1afdd9c14d17dc96664284db7e53ddedac" kind="variable"><name>_length_index</name></member>
+    <member refid="classts_1_1MA_1a5b7be2646d422c068bd851cd94ef7afc" kind="variable"><name>_pred_offset</name></member>
+    <member refid="classts_1_1MA_1af7a8a3ae4e2db0e548a77320167ad623" kind="function"><name>MA</name></member>
+    <member refid="classts_1_1MA_1aefb00f6e1026ccac7efffa72131b89b1" kind="function"><name>MA</name></member>
+    <member refid="classts_1_1MA_1a430775bb3d411692c640eebe469a2c77" kind="function"><name>get_weights</name></member>
+    <member refid="classts_1_1MA_1ac2b85e8e2e8e489d7870657e6fc8c13a" kind="function"><name>get_constant</name></member>
+    <member refid="classts_1_1MA_1a0b6626ab7075937f69bab5d0d756d249" kind="function"><name>set_weights</name></member>
+    <member refid="classts_1_1MA_1ab3a80eb569001b939ef9e3af280538e9" kind="function"><name>set_constant</name></member>
+    <member refid="classts_1_1MA_1aba1a145d8143eca1fac7224b5d5dce98" kind="function"><name>forecast</name></member>
+  </compound>
+  <compound refid="namespacets" kind="namespace"><name>ts</name>
+  </compound>
+  <compound refid="TimeSeries_8h" kind="file"><name>TimeSeries.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>
